@@ -1,0 +1,18 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: my-flask-app
+spec:
+  source:
+    git:
+      uri: https://github.com/CamilaHirschf/App.git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: python:3.8
+    type: Source
+  output:
+    to:
+      kind: ImageStreamTag
+      name: my-flask-app:latest

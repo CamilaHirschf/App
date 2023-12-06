@@ -1,12 +1,12 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: my-flask-app-route
+  name: app-git
 spec:
   host: app-git-app-flask.apps.ocpd.anses.gov.ar
   to:
     kind: Service
-    name: my-flask-app
+    name: app-git
   port:
     targetPort: 8080
   wildcardPolicy: None

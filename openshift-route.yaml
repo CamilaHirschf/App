@@ -3,9 +3,10 @@ kind: Route
 metadata:
   name: my-flask-app-route
 spec:
+  host: app-git-app-flask.apps.ocpd.anses.gov.ar
   to:
     kind: Service
     name: my-flask-app
   port:
-    targetPort: 80
+    targetPort: 8080
   wildcardPolicy: None

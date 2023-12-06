@@ -1,7 +1,7 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: my-flask-app
+  name: app-git
 spec:
   source:
     git:
@@ -15,4 +15,4 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: my-flask-app:latest
+      name: app-git:latest

@@ -1,31 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-flask-app
+  name: app-git
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-flask-app
+      app: app-git
   template:
     metadata:
       labels:
-        app: my-flask-app
+        app: app-git
     spec:
       containers:
-      - name: my-flask-app
-        image: my-flask-app:latest
+      - name: app-git
+        image: app-git:latest
         ports:
-        - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-flask-app
-spec:
-  selector:
-    app: my-flask-app
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 5000
+        - containerPort: 5000
